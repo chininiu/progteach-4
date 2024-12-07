@@ -1,0 +1,429 @@
+*
+{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins';
+}
+:root
+{
+    --body-color: #E4E9F7;
+    --sidebar-color: #fff;
+    --primary-color:#695cfe;
+    --primary-color-light: #f6f5ff;
+    --toggle-color:#DDD;
+    --text-color:#707070;
+    --product-color:#ffffff;
+    --body-color: #e6e7f0;
+    --text-color-2:#2b2b2b;
+   
+   
+
+
+    --trans-2s: all .2s ease;
+    --trans-3s: all .3s ease;
+    --trans-4s: all .4s ease;
+    --trans-5s: all .5s ease;
+
+    --anim-3s: animate 8s linear infinite;
+    --anim-4s: animate 9s linear infinite;
+    --anim-5s: animate 7s linear infinite;
+    --anim-6s: animate 6s linear infinite;
+}
+
+.sidebar.close{
+    width: 5vw;
+}
+
+
+
+body
+{
+    background:url("Login_background.png");
+    height: 100%;
+    transition: var(--trans-4s);
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--body-color);
+    overflow-x: hidden;
+
+}
+body.dark 
+{
+    --body-color: #181918;
+    --sidebar-color: #242526;
+    --primary-color:#3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color:#fff;
+    --text-color:#ffffff;
+    --product-color:#dfdfdf;
+    --body-color: #424244;
+    --text-color-2:#fcf7f7;
+}
+.sidebar
+{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 15vw;
+    background-color: var(--sidebar-color);
+    padding: 2vh 1vw;
+    transition:var(--trans-5s);
+    z-index:100;
+  
+}
+
+.sidebar.close .text{
+    opacity: 0;
+
+}
+.sidebar .menu-bar
+{
+    height:calc(100% - 12%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.text
+{
+    color:var(--text-color);
+    font-size: 1vw;
+    transition: var(--trans-2s);
+    white-space: nowrap;
+    opacity:1;
+}
+.sidebar li
+{
+    height:10vh;
+    margin-top:2vh;
+    list-style: none;
+    display:flex;
+    align-items: center;
+    font-size:1.3vw;
+}
+.sidebar header
+{
+    position:relative;
+}
+ .sidebar .img-text .image img
+{
+    width: 4vw;
+    border-radius: 1vh;
+    
+}
+.sidebar .img-text .image
+{
+    min-width: 5vw;
+    display: flex;
+    align-items: center;
+}
+.sidebar header .text .title
+{
+    font-size: 1.5vw ;
+    font-weight: 500;
+}
+.sidebar header .img-text
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.sidebar .prog
+{
+    color:#695cfe;
+}
+.sidebar .teach
+{
+    color:var(--text-color)
+}
+.sidebar .title
+{
+    display: flex;
+    flex-direction: row;
+}
+.sidebar .toggle
+{
+    position:absolute;
+    right:-1.9vw;
+    top: 50%;
+    transform: rotate(180deg) translateY(50%);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8vw;
+    transition: var(--trans-3s);
+}
+.sidebar.close .toggle
+{
+   
+  transform: translateY(-50%);;
+}
+
+.sidebar li a
+{
+    height: 100%;
+    width: 100%;
+    text-decoration: none ;
+    display: flex;
+    align-items: center;
+    transition: var(--trans-2s);
+    border-radius: 3vh;
+}
+.sidebar li :hover .text,
+.sidebar li a:hover .icon{
+    color: var(--text-color);
+}
+
+.sidebar li a:hover
+{
+    background-color: var(--primary-color-light);
+    color:var(--text-color)
+}
+.sidebar li .icon
+{
+    display: flex;
+    justify-content: center;
+    min-height: 3.5vh;
+    min-width: 4.5vw;
+    color:var(--text-color);
+    transition:var(--trans-2s)
+    
+}
+
+.sidebar .icon
+{
+    font-size: 0.7vw;
+}
+
+.sidebar li .text
+{
+    transition:var(--trans-2s)
+}
+
+.menu-bar .mode
+{
+
+    position:relative;
+    background-color: var(--primary-color-light);
+    border-radius: 1vh;
+    transition: var(--trans-5s);
+}
+.menu-bar .mode .moon-sun
+{
+    height: 5vh;
+    width:4vw;
+    display:flex;
+    align-items: center;
+
+}
+.menu-bar .mode .moon-sun .sun
+{
+    opacity: 0;
+    transition: var(--trans-2s);
+}
+
+body.dark .menu-bar .mode .moon-sun .sun
+{
+    opacity: 1;
+    
+}
+
+body.dark .menu-bar .mode .moon-sun .moon
+{
+    opacity: 0;
+    transition: var(--trans-2s);
+    
+}
+.menu-bar .mode .i
+{
+    position:absolute;
+
+}
+.menu-bar .mode .toggle-switch
+{
+    
+    right:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    min-width:5vw;
+    cursor:pointer;
+    position:absolute;
+}
+.toggle-switch .switch
+{
+    position: relative;
+    height:3vh;
+    width: 3.5vw;
+    border-radius:3vh;
+    background:var(--toggle-color)
+}
+.switch::before
+{
+    content: '';
+    height: 2vh;
+    width: 1vw;
+    border-radius: 50%;
+    background: var(--primary-color-light);
+    position:absolute;
+    top:50%;
+    left:.5vw;
+    transform: translateY(-50%);
+    transition: var(--trans-2s);
+}
+
+body.dark .switch::before
+{
+    left:2.1vw;
+}
+
+.home 
+{
+    position:relative;
+    height: 100vh;
+    left:17%;
+    width: calc(83%);   
+    transition: var(--trans-5s);
+}
+
+.sidebar.close ~ .home
+{
+    left:7%;
+    width: calc(93%);
+}
+/*search*/
+
+.home
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.account_container
+{
+ 
+ position: relative;
+ top: -13%;
+   
+    
+}
+
+.account_container .details
+{
+    font-size: 2vw;
+    text-align: center;
+}
+
+.account_container .myaccount-title
+{
+   
+    font-size: 5vh;
+    text-align: center;
+    color:var(--text-color-2)
+}
+.account_container .line-break
+{
+    margin-bottom: 2vh
+}
+.account_container .details-container
+{
+    position:relative;
+    width: 50vw;
+    height: 50Vh;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 3%;
+    border-radius: 1vh;
+    box-shadow: 0px 0px 5px 1px #a9a9a9;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5%;
+}
+
+lord-icon
+{
+    width:20%;
+    height:20%;
+    display: relative;
+    left: 40%;
+    bottom: 50%;
+    transform: translate(50% 50%);
+}
+
+.account_container .title
+{
+    font-size: 1.3vw;
+    font-weight: 500;
+    
+    
+}
+
+.account_container .animated-avatar
+{       
+        display: relative;
+        left: 50%;
+        top: 50%;
+        color:var(--text-color-2)
+}
+
+.account_container .details-container input
+{
+    position:relative;
+    border: none;
+    font-size: 2vh;
+    left:1%
+}
+.account_container #email-title
+{
+    font-size: 2vh;
+    position:relative;
+    left:1%
+}
+
+.account_container #user-title
+{
+    font-size: 2vh;
+    position:relative;
+    left:1%
+}
+
+
+
+
+/*Keyframes*/
+@keyframes bg
+{
+    0%
+    {
+        background-position: 0% 100%;
+    }
+
+    30%
+    {
+        background-position: 20% 60%;
+    }
+
+    50%{
+        background-position: 100% 100%;
+    }
+    70%
+    {
+        background-position: 50% 50%;
+    }
+
+    100%{
+        background-position: 100% 0%;
+    }
+}
